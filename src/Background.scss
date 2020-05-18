@@ -1,0 +1,69 @@
+$seed: 151;
+$total_artifacts: 10;
+
+@function getRandom($max) {
+  //http://thesassway.com/advanced/pure-sass-functions
+  //http://indiegamr.com/generate-repeatable-random-numbers-in-js/
+  //Note the "!global" flag:
+  //https://webdesign.tutsplus.com/articles/understanding-variable-scope-in-sass--cms-23498
+  $seed: ($seed * 9301 + 49297) % 233280 !global @return ($seed / 233280) * $max;
+  /* /RANDOMNESS */
+}
+
+@for $i from 1 through $total_artifacts {
+  .artifact:nth-child(#{$i}) {
+    left: (getRandom(100) * 1vw);
+    top: ((getRandom(80) + 20) * 1vh);
+    transform: scale((getRandom(80) + 20) * 0.01);
+    opacity: (0.1 + 0.5 * (getRandom(100) * 0.01));
+  }
+}
+.background {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #7da7e2;
+  z-index: -100;
+  .artifact {
+    position: absolute;
+    border: 0px solid red;
+    width: 20px;
+    height: 20px;
+    &:before {
+      position: absolute;
+      font-size: 40px;
+      content: "☁️";
+      animation: passing 60s linear infinite;
+    }
+  }
+  .sun {
+    position: absolute;
+    top: -0.5em;
+    left: -0.5em;
+    font-size: 80px;
+    animation: rotating 60s linear infinite;
+    &:before {
+      content: "☀️";
+    }
+  }
+}
+
+@keyframes passing {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
