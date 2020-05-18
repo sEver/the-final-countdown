@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9ba65ebe0b18fcc917c6c00c6378b36f",
+    "revision": "bfb2a49dbf615630a5d601c28326c772",
     "url": "/the-final-countdown/build/index.html"
   },
   {
-    "revision": "b1f1fd9dbb95bf10c0c0",
-    "url": "/the-final-countdown/build/static/css/main.27c4f017.chunk.css"
+    "revision": "e18f4ba19b99790348d1",
+    "url": "/the-final-countdown/build/static/css/main.e19e6477.chunk.css"
   },
   {
     "revision": "b56d80eae04801fe27cf",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/the-final-countdown/build/static/js/2.ea1b3e83.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b1f1fd9dbb95bf10c0c0",
+    "revision": "e18f4ba19b99790348d1",
     "url": "/the-final-countdown/build/static/js/main.1cfb5388.chunk.js"
   },
   {
