@@ -1,18 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 .timer {
-  transition: all, 1s;
-  font-size: 100px;
+  width: 99vw;
+  margin-left: 1vw;
+  transition: all 1s;
+  font-size: 9vw;
   font-family: "Lobster", cursive;
+  text-align: center;
   background: transparent;
-  span {
+  &__title {
+    text-align: center;
+  }
+  &__digit-block {
     display: inline-block;
-
+    position: relative;
     color: pink;
     margin-right: 0.2em;
     &:before {
       content: ":";
       margin-right: 0.2em;
+      float: left;
     }
     &:first-child:before {
       content: "";
@@ -21,17 +28,23 @@
       margin-left: 0.2em;
       font-size: 0.3em;
     }
-    &:nth-child(1):after {
+    &.dni:after {
       content: "dni";
     }
-    &:nth-child(2):after {
+    &.godzin:after {
       content: "godzin";
     }
-    &:nth-child(3):after {
+    &.minut:after {
       content: "minut";
     }
-    &:nth-child(4):after {
-      content: "sekund";
+    &.sekund {
+      width: 2.5em;
+      text-align: left;
+      &:after {
+        content: "sekund";
+        float: right;
+        line-height: 6em;
+      }
     }
   }
   span.showdown {

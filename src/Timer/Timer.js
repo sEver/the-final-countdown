@@ -1,5 +1,7 @@
 import React from "react";
+import Digit from "./Digit";
 import "./Timer.scss";
+
 export default class Timer extends React.Component {
   state = {
     timeLeftArray: [],
@@ -57,13 +59,23 @@ export default class Timer extends React.Component {
   }
 
   renderDigits() {
-    if (this.state.millisecondsLeft < 0) {
-      return <span class="showdown">To już. Gratulacje!!!</span>;
+    if (this.state.millisecondsLeft <= 0) {
+      return (
+        <span className="showdown">
+          To już. Gratulacje!!!
+          <span role="img" aria-label="przytulenie">
+            🤗
+          </span>
+        </span>
+      );
     }
+    const classes = ["dni", "godzin", "minut", "sekund"];
     return (
       <>
-        {this.state.timeLeftArray.map((value) => (
-          <span>{value}</span>
+        {this.state.timeLeftArray.map((value, index) => (
+          <>
+            <Digit value={value} className={classes[index]}></Digit>
+          </>
         ))}
       </>
     );
