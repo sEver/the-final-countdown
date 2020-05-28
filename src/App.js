@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Background />
       <Timer until="2020-09-01T15:00:00"></Timer>
     </div>
