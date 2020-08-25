@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <Background />
-      <Timer until="2020-09-01T15:00:00"></Timer>
+      <Timer until="2020-09-01T12:00:00"></Timer>
     </div>
   );
 }
